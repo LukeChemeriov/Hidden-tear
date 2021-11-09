@@ -75,8 +75,7 @@ unsigned short getVolumeHash()
           "=c" (p[2]), "=d" (p[3])            
         : "0" (ax)           
     );  
-    cout<<"p is "<<*p<<endl;
-    cout<<"ax is "<<ax<<endl;
+    
  }         
 
  unsigned short getCpuHash()            
