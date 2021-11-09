@@ -9,16 +9,16 @@ string getFilename(string strPath);
 void Traversal ( vector<string> & files, bool mode )
 {
     class path pwd_path = current_path(); 
-    cout<< pwd_path<<endl;
+    
 	class path test_file_path = pwd_path / "test_file";
 	recursive_directory_iterator beg_iter(test_file_path);
 	recursive_directory_iterator end_iter;
-	cout << "start walking...\n";
+	
 	for (; beg_iter != end_iter; ++beg_iter) {
         string strPath = beg_iter->path().string();
 		if ((getFilename(strPath)=="/.DS_Store")or(getFilename(strPath)=="/.DS_Store.locked")) continue;
 		if (is_directory(*beg_iter)) {
-			cout<<current_path()<<endl;
+			
             continue;
 		}
 		else if ( (getSuffix(strPath) != ".locked") and (mode) )
@@ -29,12 +29,11 @@ void Traversal ( vector<string> & files, bool mode )
 		{	
             files.push_back(strPath);
 		}
-        cout<<"view file: "<<strPath<<endl;
+      
 	}
 	cout << "finish walking.\n";
-	for (int i=0;i<files.size();i++)
-		cout<<getFilename(files[i])<<"; ";
-	cout<<endl;
+	for (int i=0;i<files.size();i++){}
+	
 }
 ////////////////////////////////////////////////
 
